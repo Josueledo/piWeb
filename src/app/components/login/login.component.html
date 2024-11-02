@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div class="imageContainer">
+  </div>
+  <div class="content">
+    <h1>Travel</h1>
+    <form [formGroup]="userForm" (submit)="onSubmit()">
+      <label for="username">USERNAME</label>
+
+      <div class="username">
+        <div class="icon">
+          <fa-icon [icon]="faUser"></fa-icon>
+        </div>
+        <input formControlName="name" id="user" type="text">
+      </div>
+      <label for="password">PASSWORD</label>
+      <div class="password">
+        <div class="icon">
+          <fa-icon [icon]="faLock"></fa-icon>
+        </div>
+        <input formControlName="password" id="password" type="password">
+      </div>
+      <input type="submit" value="LOGIN">
+      <span class="forgot">FORGOT PASSWORD?</span>
+    </form>
+    <span class="signup">NO ACCOUNT? <strong class="link" routerLink="/signup">SIGN UP</strong></span>
+  </div>
+</div>

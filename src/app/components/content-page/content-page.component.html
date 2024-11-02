@@ -1,0 +1,40 @@
+<div class="container">
+
+
+
+
+
+  <div class="content">
+    <div class="header">
+      <div class="user" routerLink="/home">
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+      </div>
+      <img
+        src={{hotelSelected[0].url}}
+        alt=""
+      />
+    </div>
+
+    <div class="stars">* * * * *</div>
+    <div class="details">
+      {{hotelSelected[0].status}}
+    </div>
+    <form [formGroup]="form" (submit)="reservar()">
+    <div class="title">
+      <h1>{{hotelSelected[0].local}}</h1>
+      <div class="sub">
+        <span>BAHEA - BA</span>
+      </div>
+    </div>
+    <div class="price">
+      R${{hotelSelected[0].preco}},00
+    </div>
+
+      <div class="date">
+        <input type="date" formControlName="date">
+      </div>
+      <input type="submit" value="RESERVAR" />
+    </form>
+  </div>
+
+</div>

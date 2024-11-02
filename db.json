@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "teste",
+      "email": "teste@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "2",
+      "name": "josue",
+      "email": "josue@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "2",
+      "name": "luiza",
+      "email": "luiza@gmail.com",
+      "password": "123"
+    }
+  ],
+  "hotel": [
+    {
+      "local": "Bahea",
+      "url": "https://cdn.pixabay.com/photo/2023/10/25/19/25/blue-8341156_960_720.jpg",
+      "status": "Disponivel",
+      "preco": 22,
+      "stars": 4,
+      "quantidade": 3,
+      "id": "d361"
+    },
+    {
+      "local": "Nanuque",
+      "url": "https://static.todamateria.com.br/upload/pa/is/paisagem-natural-og.jpg",
+      "status": "Disponivel",
+      "preco": 42,
+      "stars": 5,
+      "quantidade": 3,
+      "id": "bb1"
+    },
+    {
+      "local": "Sumare",
+      "url": "https://46781.cdn.simplo7.net/static/46781/sku/quadros-por-tema-paisagens-e-natureza-quadro-retangular-paisagem-litoranea-ao-anoitecer--p-1633033574294.jpg",
+      "status": "Disponivel",
+      "preco": 80,
+      "stars": 3,
+      "quantidade": 3,
+      "id": "bb22"
+    }
+  ],
+  "reservas": [
+    {
+      "id": "b72c",
+      "idUser": "2",
+      "idHotel": "d361",
+      "date": "2024-11-07"
+    },
+    {
+      "id": "5d7d",
+      "idUser": "2",
+      "idHotel": "d361",
+      "date": "2024-11-13"
+    },
+    {
+      "id": "7487",
+      "idUser": "2",
+      "idHotel": "d361",
+      "date": "2024-11-13"
+    },
+    {
+      "id": "2e52",
+      "idUser": "2",
+      "idHotel": "bb1",
+      "date": "2024-11-18"
+    },
+    {
+      "id": "024a",
+      "idUser": "2",
+      "idHotel": "bb1",
+      "date": "2024-11-21"
+    }
+  ]
+}

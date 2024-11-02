@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+$primary: #0F8198;
+$hover:#1c6675;
+$status: rgb(35, 153, 35);
+$secondary :rgb(245,245,245) ;
+$gradient: linear-gradient(167deg, rgba(245,245,245,1) 0%, rgba(234,234,234,1) 100%);

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="content">
+      <div class="header">
+        <h1>{{userName}}</h1>
+        <p>Hortolandia - sp</p>
+        <div class="menu">
+          <fa-icon [icon]="faRightFromBracket" (click)="logout()"></fa-icon>
+        </div>
+        <div class="user" routerLink="/home">
+          <fa-icon [icon]="faArrowLeft"></fa-icon>
+        </div>
+      </div>
+
+    <div class="title">
+      <span>
+        Reservas
+      </span>
+    </div>
+    @for (hotel of userHoteis; track $index) {
+      <div class="card">
+          <div class="name">
+          <span>{{hotel.local}}</span>
+        </div>
+      <div class="status">
+        <span>{{hotel.status}}</span>
+      </div>
+      <img
+      src={{hotel.url}}
+      alt=""
+      />
+      <div class="stars"></div>
+    </div>
+  }
+  </div>
+</div>

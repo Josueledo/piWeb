@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="content">
+      <div class="header">
+        <h1>EXPLORE</h1>
+        <p>Know what you want</p>
+        <div class="user" routerLink="/user">
+          <fa-icon [icon]="faUser"></fa-icon>
+        </div>
+      </div>
+
+      <div class="search">
+        <input [formControl]="filtro" type="text" placeholder="Busque aqui..." />
+        <fa-icon [icon]="faSearch"></fa-icon>
+    </div>
+    <div class="title">
+      <span>
+        Recommended
+      </span>
+    </div>
+    @for (hotel of hoteisFiltrados; track $index) {
+      <div class="card" [routerLink]="'/reserva'" [queryParams]="{id:hotel.id}">
+        <div class="name">
+          <span>{{hotel.local}}</span>
+        </div>
+        <div class="status">
+          <span>{{hotel.status}}</span>
+        </div>
+        <div class="img">
+
+          <img
+          src={{hotel.url}}
+          alt=""
+          />
+        </div>
+        <div class="stars">
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+
+        </div>
+      </div>
+    }@empty {
+      <span>Nenhum hotel encontrado...</span>
+    }
+  </div>
+</div>

@@ -1,0 +1,114 @@
+@import "../../../styles.scss";
+
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $gradient;
+}
+.imageContainer{
+  width: 400px;
+  height: 500px;
+  background:url("/bg.jpg") ;
+  background-size: cover;
+  border-top-left-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.199);
+  border-bottom-left-radius: 20px;
+}
+.content{
+  width: 400px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background:$gradient ;
+  overflow: hidden;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.123);
+
+
+  h1{
+    color: $primary;
+    font-size: 3rem;
+  }
+  form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    input[type="text"],input[type="password"]{
+      border: none;
+      width: 200px;
+      border-bottom: 2px solid $primary;
+      background-color: transparent;
+      padding: 5px;
+      &:focus{
+        outline: none;
+        border-bottom: 2px solid $hover;
+      }
+    }
+    .icon{
+      position: absolute;
+      background-color: $primary;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: white;
+      left: 75px;
+    }
+    label{
+      color: $primary;
+      font-size: .9rem;
+      margin-top: 20px;
+    }
+    .username, .password{
+      display: flex;
+    }
+    input[type="submit"]{
+      width: 200px;
+      height: 35px;
+      border-radius:30px;
+      border: none;
+      background-color: $primary;
+      color: white;
+      margin-top: 50px;
+      &:hover{
+        cursor: pointer;
+        opacity: .8;
+      }
+    }
+    .forgot{
+      color: $primary;
+      font-size: .7rem;
+      margin-top: 13px;
+    }
+
+  }
+  .signup{
+    color: $primary;
+    font-size: .8rem;
+    margin-top: 13px;
+  }
+  .link{
+    cursor: pointer;
+  }
+}
+
+@media (width <= 815px) {
+  .imageContainer{
+    display: none;
+  }
+  .content{
+    height: 100vh;
+    width: 100%;
+  }
+}
