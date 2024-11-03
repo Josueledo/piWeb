@@ -61,7 +61,11 @@ export class ContentPageComponent implements OnInit {
   }
   reservar(){
     this.reservaService.createReserva({idUser:this.idUser,idHotel:this.hotelSelected[0].id,date:this.form.value.date!}).subscribe({
-      next:(data) => console.log("Reserva criada!",data),
+      next:(data) => {
+        alert("Reserva Realizada")
+        this.form.reset()
+        console.log("Reserva criada!",data)},
+
       error:(err) => console.log(err)
     })
   }

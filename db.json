@@ -7,7 +7,7 @@
       "password": "12345"
     },
     {
-      "id": "2",
+      "id": "3",
       "name": "josue",
       "email": "josue@gmail.com",
       "password": "12345"
@@ -51,15 +51,9 @@
   "reservas": [
     {
       "id": "b72c",
-      "idUser": "2",
+      "idUser": "3",
       "idHotel": "d361",
       "date": "2024-11-07"
-    },
-    {
-      "id": "5d7d",
-      "idUser": "2",
-      "idHotel": "d361",
-      "date": "2024-11-13"
     },
     {
       "id": "7487",
@@ -74,10 +68,10 @@
       "date": "2024-11-18"
     },
     {
-      "id": "024a",
+      "id": "751c",
       "idUser": "2",
-      "idHotel": "bb1",
-      "date": "2024-11-21"
+      "idHotel": "bb22",
+      "date": "2024-11-11"
     }
   ]
 }
