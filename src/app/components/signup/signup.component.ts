@@ -25,7 +25,7 @@ export class SignupComponent {
   faLock = faLock;
   allUsers: User[] = [];
   fb = inject(FormBuilder);
-  router = inject(Router)
+  router = inject(Router);
 
   constructor(private userService: UserService) {}
 
@@ -44,35 +44,34 @@ export class SignupComponent {
   onSubmit(): void {
     this.create();
   }
-verificarUserExistente(){
-  for(let i = 0; this.allUsers.length > i;i++){
-    if(this.userForm.value.name === this.allUsers[i].name || this.userForm.value.email === this.allUsers[i].email){
-      alert("Username ou email já cadastrados")
-      return true
+  verificarUserExistente() {
+    for (let i = 0; this.allUsers.length > i; i++) {
+      if (
+        this.userForm.value.name === this.allUsers[i].name ||
+        this.userForm.value.email === this.allUsers[i].email
+      ) {
+        alert('Username ou email já cadastrados');
+        return true;
+      }
     }
-    }
-    return false
-}
+    return false;
+  }
 
   create() {
-
-    if(!this.verificarUserExistente()){
-
-    this.userService
-      .createUser({
-        id: this.allUsers.length.toString(),
-        name: this.userForm.value.name!,
-        email: this.userForm.value.email!,
-        password: this.userForm.value.password!,
-      })
-      .subscribe({
-        next: (data) =>{
-          console.log('User create', data)
-          this.router.navigateByUrl("/login")
-        } ,
-        error: (err) => console.log('Erro ao criar. ', err),
-      });
+    if (!this.verificarUserExistente()) {
+      this.userService
+        .createUser({
+          name: this.userForm.value.name!,
+          email: this.userForm.value.email!,
+          password: this.userForm.value.password!,
+        })
+        .subscribe({
+          next: (data) => {
+            console.log('User create', data);
+            this.router.navigateByUrl('/login');
+          },
+          error: (err) => console.log('Erro ao criar. ', err),
+        });
     }
-
   }
 }

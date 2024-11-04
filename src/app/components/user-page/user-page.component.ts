@@ -26,14 +26,14 @@ export class UserPageComponent {
   router = inject(Router);
   allReservas: Reserva[] = [];
   userHoteis: Hotel[] = [];
-  userReservas:Reserva[] = []
+  userReservas: Reserva[] = [];
   reservaService = inject(ReservaHotel);
   hotelService = inject(HotelService);
   userService = inject(UserService);
   idUser = localStorage.getItem('angularToken');
   userName: string = '';
   allHotel: Hotel[] = [];
-  allUsers:User[] = [];
+  allUsers: User[] = [];
   logout() {
     localStorage.removeItem('angularToken');
     this.router.navigateByUrl('/login');
@@ -41,7 +41,7 @@ export class UserPageComponent {
   ngOnInit() {
     this.getAllReservas();
     this.getAllHotel();
-    this.getAllUsers()
+    this.getAllUsers();
   }
   getAllReservas() {
     this.reservaService.getAllReserva().subscribe({
@@ -59,34 +59,33 @@ export class UserPageComponent {
     });
   }
   userReserva() {
-    this.userHoteis = []
-    this.userReservas = []
+    this.userHoteis = [];
+    this.userReservas = [];
     for (let i = 0; this.allReservas.length > i; i++) {
-      if (this.allReservas[i].idUser === this.idUser) {
-        this.userReservas.push(this.allReservas[i]);
-        for (let j = 0; this.allHotel.length > j; j++) {
-          if (this.allHotel[j].id === this.allReservas[i].idHotel) {
-            this.userHoteis.push(this.allHotel[j]);
-          }
-        }
-      }
+      // if (this.allReservas[i].idUser === this.idUser) {
+      //   this.userReservas.push(this.allReservas[i]);
+      //   for (let j = 0; this.allHotel.length > j; j++) {
+      //     if (this.allHotel[j].id === this.allReservas[i].idHotel) {
+      //       this.userHoteis.push(this.allHotel[j]);
+      //     }
+      //   }
+      // }
     }
   }
   getUsername() {
-    for(let i = 0;this.allUsers.length > i;i++){
-      if(this.allUsers[i].id === this.idUser){
-        this.userName = this.allUsers[i].name
-      }
+    for (let i = 0; this.allUsers.length > i; i++) {
+      // if (this.allUsers[i].id === this.idUser) {
+      //   this.userName = this.allUsers[i].name;
+      // }
     }
   }
-  getAllUsers(){
+  getAllUsers() {
     this.userService.getAll().subscribe({
-      next:(data)=>{
-        this.allUsers = data
-        this.getUsername()
+      next: (data) => {
+        this.allUsers = data;
+        this.getUsername();
       },
-      error:(err) => console.log(err)
-    })
-
+      error: (err) => console.log(err),
+    });
   }
 }
